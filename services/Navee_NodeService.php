@@ -84,6 +84,7 @@ class Navee_NodeService extends BaseApplicationComponent {
     $nodeRecord->includeInNavigation = $node->includeInNavigation;
     $nodeRecord->passive             = $node->passive;
     $nodeRecord->userGroups          = $node->userGroups;
+    $nodeRecord->active_pattern      = $node->active_pattern;
     $nodeRecord->validate();
     $node->addErrors($nodeRecord->getErrors());
 

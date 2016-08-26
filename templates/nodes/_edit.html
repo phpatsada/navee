@@ -161,6 +161,20 @@
         }) }}
 
 
+        <hr/>
+
+        {{ forms.textField({
+        label: 'Set Active Pattern'|t,
+        id: 'active_pattern',
+        instructions: 'Match regular expression pattern with current uri. Node is then set active if match found.',
+        name: 'active_pattern',
+        value: node.active_pattern,
+        errors: node.getErrors('active_pattern'),
+        required: false
+        }) }}
+
+
+
         {% if fieldLayouts %}
           <hr/>
           <div>

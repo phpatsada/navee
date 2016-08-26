@@ -158,7 +158,17 @@ class NaveeService extends BaseApplicationComponent {
     $currentUri = ltrim(craft()->request->getPath(), '/');
     $link       = ltrim($node->link, '/');
 
-    if (($link == $currentUri) && !$node->passive)
+    $uri_match  = ($link == $currentUri);
+
+    if ($node->active_pattern && !$uri_match)
+    {
+      if (preg_match($node->active_pattern, $currentUri))
+      {
+        $uri_match = true;
+      }
+    }
+
+    if ($uri_match && !$node->passive)
     {
       $node->active = true;
       $data         = true;

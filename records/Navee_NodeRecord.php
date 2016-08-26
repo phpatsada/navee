@@ -36,6 +36,8 @@ class Navee_NodeRecord extends BaseRecord {
       'includeInNavigation' => array(AttributeType::Bool, 'required' => true),
       'passive'             => array(AttributeType::Bool, 'required' => true),
       'userGroups'          => array(AttributeType::Mixed, 'required' => false),
+      
+      'active_pattern'      => array(AttributeType::String, 'required' => false),
     );
   }
 
